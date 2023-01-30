@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,19 +16,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
     public void convertCurrency(View view) {
 
-        EditText dollarText =
-                findViewById(R.id.dollarText);
+        EditText dollarText = findViewById(R.id.dollarText);
         TextView textView = findViewById(R.id.textView);
+
         if (!dollarText.getText().toString().equals("")) {
-            float dollarValue =
-                    Float.parseFloat(dollarText.getText().toString());
+
+            float dollarValue = Float.parseFloat(dollarText.getText().toString());
             float euroValue = dollarValue * 0.85F;
-            textView.setText(String.format(Locale.ENGLISH,
-                    "%f", euroValue));
+            textView.setText(String.format(Locale.ENGLISH, "%f", euroValue));
         } else {
-            textView.setText(R.string.no_value_string);
+            textView.setText("No Value");
         }
     }
 }
